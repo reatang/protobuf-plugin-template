@@ -6,6 +6,8 @@ import (
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 )
 
+const DemoAnalyse = "demo"
+
 type DemoAnalyseBuilder struct{}
 
 func NewDemoAnalyseBuilder() *DemoAnalyseBuilder {
@@ -13,7 +15,7 @@ func NewDemoAnalyseBuilder() *DemoAnalyseBuilder {
 }
 
 func (a *DemoAnalyseBuilder) Schema() string {
-	return "demo"
+	return DemoAnalyse
 }
 
 func (a *DemoAnalyseBuilder) Analyse(params map[string]string, proto *descriptor.FileDescriptorProto) generator.GenerateFile {

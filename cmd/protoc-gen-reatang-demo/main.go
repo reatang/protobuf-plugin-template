@@ -24,7 +24,7 @@ func main() {
 	g := generator.NewProtoFileGenerator(params)
 
 	// 执行生成器
-	resp, err := g.Generate("demo", req)
+	resp, err := g.Generate(demo.DemoAnalyse, req)
 
 	// 返回 protoc
 	protoio.ResponseEncode(resp)
