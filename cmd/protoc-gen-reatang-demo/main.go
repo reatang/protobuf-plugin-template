@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github/reatang/protobuf-plugin-template/demo"
+	"github/reatang/protobuf-plugin-template/internal/demo"
 	"github/reatang/protobuf-plugin-template/pkg/generator"
 	"github/reatang/protobuf-plugin-template/pkg/log"
 	"github/reatang/protobuf-plugin-template/pkg/protoio"
