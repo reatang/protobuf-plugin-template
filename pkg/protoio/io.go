@@ -9,7 +9,7 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// 解码protoc传来的语法数据
+// RequestDecode 解码protoc传来的语法数据
 func RequestDecode(read io.Reader) *plugin.CodeGeneratorRequest {
 	req := &plugin.CodeGeneratorRequest{}
 	data, err := io.ReadAll(read)
@@ -23,7 +23,7 @@ func RequestDecode(read io.Reader) *plugin.CodeGeneratorRequest {
 	return req
 }
 
-// 解码opt参数
+// ParamsMapDecode 解码opt参数
 func ParamsMapDecode(req *plugin.CodeGeneratorRequest) map[string]string {
 	paramsMap := make(map[string]string)
 	params := req.GetParameter()
@@ -39,7 +39,7 @@ func ParamsMapDecode(req *plugin.CodeGeneratorRequest) map[string]string {
 	return paramsMap
 }
 
-// 返回编码后的内容
+// ResponseEncode 返回编码后的内容
 func ResponseEncode(resp proto.Message) {
 	data, err := proto.Marshal(resp)
 	if err != nil {
