@@ -17,6 +17,10 @@ func main() {
 		panic(err)
 	}
 
+	if v, ok := params["reqjson"]; ok && v == "true" {
+		protoio.RequestJson(req)
+	}
+
 	// 注册分析器
 	generator.AddAnalyse(demo.NewDemoAnalyseBuilder())
 

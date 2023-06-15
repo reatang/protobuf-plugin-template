@@ -1,11 +1,13 @@
 package protoio
 
 import (
+	"encoding/json"
 	"io"
 	"os"
 	"strings"
 
 	plugin "github.com/golang/protobuf/protoc-gen-go/plugin"
+	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -46,6 +48,25 @@ func ResponseEncode(resp proto.Message) {
 		panic(err)
 	}
 	_, err = os.Stdout.Write(data)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func RequestJson(req *plugin.CodeGeneratorRequest) {
+	if log.GetLevel() != log.DebugLevel {
+		return
+	}
+
+	o, err := os.Create("req.json")
+	if err != nil {
+		panic(err)
+	}
+	bytes, err := json.MarshalIndent(req, "", "  ")
+	if err != nil {
+		panic(err)
+	}
+	_, err = o.Write(bytes)
 	if err != nil {
 		panic(err)
 	}
