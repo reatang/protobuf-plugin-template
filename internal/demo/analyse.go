@@ -53,6 +53,9 @@ func (a *DemoAnalyseBuilder) Analyse(params map[string]string, proto *descriptor
 
 	// 转交给生成器
 	fileGen := &FileGen{File: fileInfo}
+	if paths, ok := params["paths"]; ok && paths == "source_relative" {
+		fileGen.SourceRelative = true
+	}
 
 	return fileGen
 }

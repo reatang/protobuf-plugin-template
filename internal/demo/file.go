@@ -10,7 +10,8 @@ import (
 )
 
 type FileGen struct {
-	File *FileInfo
+	File           *FileInfo
+	SourceRelative bool
 }
 
 func (f *FileGen) GetFile() ([]*plugin.CodeGeneratorResponse_File, error) {
@@ -42,5 +43,11 @@ func (f *FileGen) GetFile() ([]*plugin.CodeGeneratorResponse_File, error) {
 func (f *FileGen) Filename(name, pkg string) string {
 	p := strings.ReplaceAll(pkg, ".", "/")
 
-	return path.Join(p, name+".md")
+	genFileName := name + ".md"
+
+	if f.SourceRelative {
+		return genFileName
+	} else {
+		return path.Join(p, name+".md")
+	}
 }
