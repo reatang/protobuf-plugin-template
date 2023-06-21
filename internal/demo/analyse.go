@@ -1,7 +1,7 @@
 package demo
 
 import (
-	"github/reatang/protobuf-plugin-template/pkg/generator"
+	"github.com/reatang/protobuf-plugin-template/pkg/generator"
 
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 )

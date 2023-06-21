@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github/reatang/protobuf-plugin-template/internal/demo"
-	"github/reatang/protobuf-plugin-template/pkg/generator"
-	"github/reatang/protobuf-plugin-template/pkg/log"
-	"github/reatang/protobuf-plugin-template/pkg/protoio"
 	"os"
+
+	"github.com/reatang/protobuf-plugin-template/internal/demo"
+	"github.com/reatang/protobuf-plugin-template/pkg/generator"
+	"github.com/reatang/protobuf-plugin-template/pkg/log"
+	"github.com/reatang/protobuf-plugin-template/pkg/protoio"
 )
 
 func main() {
