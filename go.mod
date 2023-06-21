@@ -1,4 +1,4 @@
-module github/reatang/protobuf-plugin-template
+module github.com/reatang/protobuf-plugin-template
 
 go 1.20
 
